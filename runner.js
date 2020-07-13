@@ -8,9 +8,15 @@ class Runner {
 
   async runTests() {
     for (let file of this.testFiles) {
-      global.it = (desc, fn) => {
-        console.log(desc);
+      const beforeEaches = [];
+      global.beforeEach = (fn) => {
+        beforeEaches.push(fn);
       };
+      global.it = (desc, fn) => {
+        beforeEaches.forEach((func) => func());
+        fn();
+      };
+
       require(file.name);
     }
   }
@@ -22,10 +28,8 @@ class Runner {
       const filepath = path.join(targetPath, file);
       const stats = await fs.promises.lstat(filepath);
 
-      if (stats.isFile() && file.includes("test.js")) {
-        this.testFiles.push({
-          name: file,
-        });
+      if (stats.isFile() && file.includes(".test.js")) {
+        this.testFiles.push({ name: filepath });
       } else if (stats.isDirectory()) {
         const childFiles = await fs.promises.readdir(filepath);
 

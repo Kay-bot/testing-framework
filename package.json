@@ -1,0 +1,23 @@
+{
+  "name": "testing-framework",
+  "version": "1.0.0",
+  "description": "Testing framework for JavaScript and Node JS app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kay-bot/testing-framework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "testcode": "index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/Kay-bot/testing-framework/issues"
+  },
+  "homepage": "https://github.com/Kay-bot/testing-framework#readme"
+}

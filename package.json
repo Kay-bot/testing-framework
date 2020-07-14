@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Kay-bot/testing-framework/issues"
   },
-  "homepage": "https://github.com/Kay-bot/testing-framework#readme"
+  "homepage": "https://github.com/Kay-bot/testing-framework#readme",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
 }
